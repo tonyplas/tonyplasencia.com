@@ -11,9 +11,11 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { label: "GitHub", url: "https://github.com/", handle: "@tony" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/", handle: "/in/tony" },
-  { label: "X / Twitter", url: "https://x.com/", handle: "@tony" },
+  { label: "X / Twitter", url: "https://x.com/tonyplasencia3", handle: "@tonyplasencia3" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/efren-plasencia/", handle: "/in/efren-plasencia" },
+  { label: "Griffain", url: "https://griffain.com", handle: "griffain.com" },
+  { label: "MoonPay", url: "https://www.moonpay.com", handle: "moonpay.com" },
+  { label: "GitHub", url: "https://github.com/tonyplas", handle: "@tonyplas" },
   { label: "Email", url: "mailto:hello@tonyplasencia.com", handle: "hello@tonyplasencia.com" },
 ];
 

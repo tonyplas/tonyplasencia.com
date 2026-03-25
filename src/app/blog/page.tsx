@@ -15,12 +15,12 @@ interface Post {
 
 const posts: Post[] = [
   {
-    slug: "hello-world",
-    title: "Hello, World",
-    date: "2025-03-25",
+    slug: "fueling-the-agent-engine",
+    title: "Fueling the Agent Engine",
+    date: "2026-03-25",
     excerpt:
-      "First post on the new site. A quick intro to what I'll be writing about here — technology, autonomy, and the systems that power our future.",
-    tags: ["meta", "intro"],
+      "From Uber to Underdog to Griffain to MoonPay — a decade of building at the frontier. Here's what I've learned about AI agents, crypto, and why the future is autonomous.",
+    tags: ["ai-agents", "crypto", "founder"],
   },
 ];
 
@@ -55,13 +55,6 @@ export default function Blog() {
           </Link>
         ))}
       </div>
-
-      {posts.length === 0 && (
-        <div className="text-muted text-sm border border-surface-border p-8 text-center">
-          <p>&gt; no posts found</p>
-          <p className="text-accent/30 mt-2">check back soon_</p>
-        </div>
-      )}
     </section>
   );
 }

@@ -14,28 +14,46 @@ export default function About() {
 
       <div className="space-y-6 text-muted leading-relaxed">
         <p>
-          Hey, I&apos;m Tony. I&apos;m passionate about technology, autonomous systems,
-          and building things that push boundaries.
+          Hey, I&apos;m Tony. I&apos;ve spent the last decade building at the edge of
+          technology &mdash; from growth at Uber in Silicon Valley, to co-founding
+          companies in web3, to now building AI agents that interact with crypto
+          markets autonomously.
         </p>
 
         <p>
-          I believe the future is being written in code, and I want to be part of
-          the team writing it. From infrastructure to AI, from drones to distributed
-          systems &mdash; I&apos;m drawn to the places where software meets the physical world.
+          I studied Political Philosophy and Economy at San Francisco State
+          University, where I also played D1-AA Rugby for three years. That
+          combination of strategic thinking and grit has shaped how I approach
+          building companies.
+        </p>
+
+        <p>
+          Currently I&apos;m at <span className="text-accent">MoonPay</span>, working
+          on giving AI agents access to onchain capital markets. Before that, I
+          co-founded <span className="text-accent">Griffain</span> &mdash; an AI-powered
+          super app for crypto where you can search anything and do anything onchain
+          in natural language. And before that, I co-founded{" "}
+          <span className="text-accent">Underdog Protocol</span>, scaling blockchain
+          infrastructure to $1M ARR.
+        </p>
+
+        <p>
+          I speak English and Spanish. When I&apos;m not building, you can find me
+          watching Bluey with my dog Zoey.
         </p>
 
         <div className="border border-surface-border p-6 mt-8 bg-surface/50">
           <h2 className="text-accent text-sm mb-4">&gt; interests.list()</h2>
           <div className="grid grid-cols-2 gap-3 text-sm">
             {[
+              "AI Agents",
+              "Solana Ecosystem",
+              "DeFi / Crypto",
+              "Developer Tooling",
+              "Growth & GTM",
               "Autonomous Systems",
-              "Infrastructure",
-              "AI / Machine Learning",
-              "Distributed Systems",
-              "Cybersecurity",
+              "Consumer Products",
               "Open Source",
-              "Blockchain",
-              "Robotics",
             ].map((interest) => (
               <div key={interest} className="flex items-center gap-2">
                 <span className="text-accent/40">$</span>

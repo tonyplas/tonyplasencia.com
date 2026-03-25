@@ -10,18 +10,24 @@ interface Post {
 }
 
 const posts: Record<string, Post> = {
-  "hello-world": {
-    slug: "hello-world",
-    title: "Hello, World",
-    date: "2025-03-25",
-    tags: ["meta", "intro"],
-    content: `Welcome to my corner of the internet.
+  "fueling-the-agent-engine": {
+    slug: "fueling-the-agent-engine",
+    title: "Fueling the Agent Engine",
+    date: "2026-03-25",
+    tags: ["ai-agents", "crypto", "founder"],
+    content: `I've spent the last decade chasing the same thread: how do you make powerful technology accessible to everyone?
 
-I built this site as a launchpad — a place to share what I'm working on, thinking about, and building toward. Expect posts on technology, autonomous systems, infrastructure, and the occasional deep dive into whatever rabbit hole I've fallen into.
+It started at Uber in 2016. Six years in Silicon Valley taught me how growth works at scale — how to find leverage, how to build systems that compound, and how to move fast without breaking the things that matter.
 
-The future is being assembled from code, silicon, and ambition. Let's see where it goes.
+Then I went down the crypto rabbit hole. I co-founded Underdog Protocol to make digital assets accessible via API. We scaled to $1M ARR, managed millions in digital assets, and proved that blockchain infrastructure could be developer-friendly. We raised our seed round from Oneblock Capital, eiV ventures, and Underdog Labs.
 
-Stay tuned.`,
+In 2024, I co-founded Griffain — an AI-powered super app for crypto built on Solana. The idea was simple: you should be able to search anything and do anything onchain in natural language. Personalize your agent, and let it work for you. The market validated the thesis — we hit a market cap north of $480M.
+
+Now I'm at MoonPay, working on the next chapter: giving AI agents direct access to onchain capital markets. With one command — npm install -g @moonpay/cli — you can give anything you build access to prediction markets, virtual accounts, on/off ramps, cross-chain swaps, and more.
+
+The pattern I keep seeing is this: the future belongs to autonomous agents that can operate in financial markets, execute complex strategies, and do it all without human babysitting. We're building the rails for that future.
+
+The agent engine is warming up. Let's see where it goes.`,
   },
 };
 

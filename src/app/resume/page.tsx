@@ -14,23 +14,46 @@ interface TimelineItem {
 const experience: TimelineItem[] = [
   {
     period: "2024 - Present",
-    role: "Your Role",
-    company: "Company Name",
-    description: "Describe what you do here. Replace this with your actual experience.",
+    role: "Growth & Partnerships",
+    company: "MoonPay",
+    description:
+      "Building developer tooling that gives AI agents access to onchain capital markets. Working on the MoonPay CLI powering prediction markets, virtual accounts, on/off ramps, and cross-chain swaps.",
   },
   {
-    period: "2022 - 2024",
-    role: "Previous Role",
-    company: "Previous Company",
-    description: "Describe your previous role and accomplishments.",
+    period: "2024",
+    role: "Co-Founder",
+    company: "Griffain",
+    description:
+      "Built an AI-powered super app for crypto on Solana. Users could search anything and execute onchain actions in natural language through personalized AI agents. Reached a market cap surpassing $480M.",
+  },
+  {
+    period: "2021 - 2024",
+    role: "Co-Founder, Head of BD & Partnerships",
+    company: "Underdog Protocol",
+    description:
+      "Scaled blockchain infrastructure empowering developers to integrate digital assets via API. Grew to $1M ARR, managed millions in digital assets. Raised $500K seed on a $10M post-money valuation.",
+  },
+  {
+    period: "2016 - 2021",
+    role: "Growth & Business Development",
+    company: "Uber",
+    description:
+      "Spent six years in Silicon Valley building growth and sales capabilities at one of the world's largest tech platforms.",
   },
 ];
 
+const education = {
+  school: "San Francisco State University",
+  degree: "B.A. Political Philosophy & Economy",
+  gpa: "3.4 / 4.0",
+  extra: "D1-AA Rugby — 3-year starter",
+};
+
 const skills = [
-  { category: "Languages", items: ["TypeScript", "Python", "Rust", "Go"] },
-  { category: "Infrastructure", items: ["AWS", "Docker", "Kubernetes", "Terraform"] },
-  { category: "Frameworks", items: ["Next.js", "React", "Node.js", "FastAPI"] },
-  { category: "Other", items: ["Git", "CI/CD", "Linux", "Networking"] },
+  { category: "Domains", items: ["AI Agents", "Web3", "DeFi", "Growth", "GTM Strategy"] },
+  { category: "Blockchain", items: ["Solana", "EVM", "Digital Assets", "On/Off Ramps"] },
+  { category: "Tools", items: ["MoonPay CLI", "Claude Code", "Coda", "Analytics"] },
+  { category: "Languages", items: ["English (Native)", "Spanish (Professional)"] },
 ];
 
 export default function Resume() {
@@ -46,7 +69,7 @@ export default function Resume() {
         <h2 className="text-sm text-accent mb-6">&gt; experience.log()</h2>
         <div className="space-y-8">
           {experience.map((item) => (
-            <div key={item.period} className="border-l border-accent/20 pl-6 relative">
+            <div key={item.period + item.company} className="border-l border-accent/20 pl-6 relative">
               <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-accent/40 rounded-full" />
               <div className="text-xs text-accent/50 mb-1">{item.period}</div>
               <div className="font-bold text-foreground">{item.role}</div>
@@ -54,6 +77,17 @@ export default function Resume() {
               <p className="text-sm text-muted/80">{item.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Education */}
+      <div className="mb-12">
+        <h2 className="text-sm text-accent mb-6">&gt; education.get()</h2>
+        <div className="border border-surface-border p-6 bg-surface/30">
+          <div className="font-bold text-foreground">{education.school}</div>
+          <div className="text-sm text-muted">{education.degree}</div>
+          <div className="text-xs text-accent/50 mt-2">GPA: {education.gpa}</div>
+          <div className="text-xs text-muted/60 mt-1">{education.extra}</div>
         </div>
       </div>
 

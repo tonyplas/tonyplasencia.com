@@ -9,8 +9,8 @@ export default function Home() {
       </h1>
 
       <p className="text-muted text-lg max-w-xl leading-relaxed">
-        Building at the intersection of technology and possibility.
-        Exploring autonomous systems, infrastructure, and the digital frontier.
+        Fueling the agent engine. Co-founder building at the intersection of
+        AI agents and crypto. Making onchain interactions insanely easy.
       </p>
 
       <div className="flex gap-4 mt-4">
@@ -30,8 +30,8 @@ export default function Home() {
 
       <div className="mt-16 text-accent/20 text-xs font-mono space-y-1">
         <p>&gt; system.status: online</p>
-        <p>&gt; location: loading...</p>
-        <p>&gt; mission: build the future_</p>
+        <p>&gt; location: oakland, ca</p>
+        <p>&gt; mission: fuel the agent engine_</p>
       </div>
     </section>
   );
