@@ -4,13 +4,13 @@ export default function Home() {
       <div className="text-accent/30 text-sm font-mono">// init v1.0</div>
 
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-        <span className="text-accent glow">Tony</span>{" "}
+        <span className="text-accent glow">Efren Antonio</span>{" "}
         <span className="text-foreground">Plasencia</span>
       </h1>
 
       <p className="text-muted text-lg max-w-xl leading-relaxed">
-        Fueling the agent engine. Co-founder building at the intersection of
-        AI agents and crypto. Making onchain interactions insanely easy.
+        Built startups in crypto + AI agents. Thinking deeply about how to use
+        technology to make people&apos;s lives easier. Enjoys Arsenal, BJJ, and learning.
       </p>
 
       <div className="flex gap-4 mt-4">
@@ -31,7 +31,7 @@ export default function Home() {
       <div className="mt-16 text-accent/20 text-xs font-mono space-y-1">
         <p>&gt; system.status: online</p>
         <p>&gt; location: oakland, ca</p>
-        <p>&gt; mission: fuel the agent engine_</p>
+        <p>&gt; mission: be the best version of myself_</p>
       </div>
     </section>
   );

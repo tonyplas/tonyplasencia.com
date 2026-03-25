@@ -13,32 +13,39 @@ interface TimelineItem {
 
 const experience: TimelineItem[] = [
   {
-    period: "2024 - Present",
-    role: "Growth & Partnerships",
+    period: "Oct 2025 - Present",
+    role: "GTM Agents",
     company: "MoonPay",
     description:
-      "Building developer tooling that gives AI agents access to onchain capital markets. Working on the MoonPay CLI powering prediction markets, virtual accounts, on/off ramps, and cross-chain swaps.",
+      "Giving agents access to the OS for modern money movement.",
   },
   {
-    period: "2024",
-    role: "Co-Founder",
-    company: "Griffain",
+    period: "2021 - 2025",
+    role: "Co-Founder, BD & Partnerships",
+    company: "Griffain + Underdog Protocol",
     description:
-      "Built an AI-powered super app for crypto on Solana. Users could search anything and execute onchain actions in natural language through personalized AI agents. Reached a market cap surpassing $480M.",
+      "Built a profitable digital asset and AI business on Solana before joining MoonPay via acquisition. Led all Business Development, Partnerships, and Product. Consumer app with 80K users, $22M ARR, and $20M in volume. SaaS at $1.5M ARR with 250+ customers. Backed by UnderdogLabs, E^I Ventures, and OneBlock Capital.",
   },
   {
-    period: "2021 - 2024",
-    role: "Co-Founder, Head of BD & Partnerships",
-    company: "Underdog Protocol",
+    period: "Jan 2020 - Jun 2021",
+    role: "BD & Partnerships",
+    company: "Thumbtack (Setter)",
     description:
-      "Scaled blockchain infrastructure empowering developers to integrate digital assets via API. Grew to $1M ARR, managed millions in digital assets. Raised $500K seed on a $10M post-money valuation.",
+      "Setter was a virtual property management and concierge company backed by Sequoia and NFX until being acquired by Thumbtack. Sales, Product Marketing, and Ops. Managed a team of 15 BDRs with 100% quota attainment. Closed over $1.3M in Home Services and worked on partnerships with insurance firms like American Family.",
   },
   {
-    period: "2016 - 2021",
-    role: "Growth & Business Development",
+    period: "Aug 2018 - Jan 2020",
+    role: "Growth, Merchants",
+    company: "Ritual.co",
+    description:
+      "Ritual is a food ordering app for fast & easy pickup backed by Sequoia Capital and Greylock. Focused on merchant acquisition, performance, customer experience, and retention. Grew San Francisco and launched Oakland & San Jose. Onboarded over 200 SMBs.",
+  },
+  {
+    period: "Aug 2016 - Aug 2018",
+    role: "Growth, Special Projects",
     company: "Uber",
     description:
-      "Spent six years in Silicon Valley building growth and sales capabilities at one of the world's largest tech platforms.",
+      "Driver acquisition and retention through in-person sales and launching projects across new markets. Onboarded over 1,000 Uber drivers and scaled projects to 5 markets.",
   },
 ];
 
@@ -50,10 +57,9 @@ const education = {
 };
 
 const skills = [
-  { category: "Domains", items: ["AI Agents", "Web3", "DeFi", "Growth", "GTM Strategy"] },
-  { category: "Blockchain", items: ["Solana", "EVM", "Digital Assets", "On/Off Ramps"] },
-  { category: "Tools", items: ["MoonPay CLI", "Claude Code", "Coda", "Analytics"] },
-  { category: "Languages", items: ["English (Native)", "Spanish (Professional)"] },
+  { category: "Skills", items: ["Sales", "GTM", "Vibe Coding", "Content Creation", "Virality", "0-1", "Cold Calling"] },
+  { category: "Tools", items: ["CRM Tools", "Drive", "Claude Code", "Codex"] },
+  { category: "Languages", items: ["English", "Spanish", "Brainrot"] },
 ];
 
 export default function Resume() {
