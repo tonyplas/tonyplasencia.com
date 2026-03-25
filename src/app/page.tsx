@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-24 flex flex-col items-start gap-6">
-      <div className="text-accent/30 text-sm font-mono">// init</div>
+      <div className="text-accent/30 text-sm font-mono">// init v1.0</div>
 
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
         <span className="text-accent glow">Tony</span>{" "}
