@@ -1,7 +1,18 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-24 flex flex-col items-start gap-6">
       <div className="text-accent/30 text-sm font-mono">// init v1.0</div>
+
+      <Image
+        src="/headshot.jpg"
+        alt="Tony Plasencia"
+        width={120}
+        height={120}
+        className="rounded-full border-2 border-accent/30"
+        priority
+      />
 
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
         <span className="text-accent glow">Efren Antonio</span>{" "}

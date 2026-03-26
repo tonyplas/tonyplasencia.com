@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
 };
+
+const podcasts = [
+  {
+    title: "Created Economy 030: Efren \"Tony\" Plasencia / Diffusion.me",
+    url: "https://www.youtube.com/live/fdoDTej0FVQ",
+  },
+  {
+    title: "This AI App Store is the Future... (Griffain)",
+    url: "https://youtu.be/OTkDBtChRRs",
+  },
+  {
+    title: "How Griffain Is Pioneering On-Chain Intelligence and Trading Strategies with AI Agents on Solana",
+    url: "https://youtu.be/CcJWbqzSE8k",
+  },
+];
 
 export default function About() {
   return (
@@ -11,6 +27,19 @@ export default function About() {
       <h1 className="text-3xl font-bold mb-8">
         <span className="text-accent glow">About</span> Me
       </h1>
+
+      <div className="flex items-center gap-6 mb-8">
+        <Image
+          src="/headshot.jpg"
+          alt="Tony Plasencia"
+          width={100}
+          height={100}
+          className="rounded-full border-2 border-accent/30 flex-shrink-0"
+        />
+        <p className="text-muted text-sm leading-relaxed">
+          Efren Antonio Plasencia — builder, founder, philosopher at heart.
+        </p>
+      </div>
 
       <div className="space-y-6 text-muted leading-relaxed">
         <p>
@@ -61,6 +90,29 @@ export default function About() {
                 <span className="text-accent/40">$</span>
                 <span>{interest}</span>
               </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="border border-surface-border p-6 mt-8 bg-surface/50">
+          <h2 className="text-accent text-sm mb-4">&gt; podcasts.play()</h2>
+          <div className="space-y-4">
+            {podcasts.map((pod) => (
+              <a
+                key={pod.url}
+                href={pod.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border border-surface-border p-4 hover:border-accent/30 transition-colors group"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-accent/40 mt-0.5">&#9654;</span>
+                  <span className="text-sm text-foreground group-hover:text-accent transition-colors">
+                    {pod.title}
+                  </span>
+                </div>
+                <div className="text-xs text-muted/40 mt-1 ml-6">YouTube</div>
+              </a>
             ))}
           </div>
         </div>
