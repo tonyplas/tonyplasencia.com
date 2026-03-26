@@ -69,6 +69,11 @@ export default function About() {
         </p>
 
         <p>
+          When I&apos;m not building, you can find me watching Bluey with my chihuahua{" "}
+          <span className="text-accent">Zoey</span>. She&apos;s the real one.
+        </p>
+
+        <p>
           Feel free to find me{" "}
           <span className="text-accent">@tonyplasencia</span> on Telegram.
         </p>
@@ -77,6 +82,11 @@ export default function About() {
           <h2 className="text-accent text-sm mb-4">&gt; interests.list()</h2>
           <div className="grid grid-cols-2 gap-3 text-sm">
             {[
+              "Defense Tech",
+              "Autonomous Defense",
+              "Power Grid Tech",
+              "The Singularity",
+              "AI Agents",
               "Product",
               "History",
               "The Markets",

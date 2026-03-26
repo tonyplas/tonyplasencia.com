@@ -23,6 +23,14 @@ interface Drone {
   scanTimer: number;
 }
 
+interface Walker {
+  x: number;
+  speed: number;
+  hasDog: boolean;
+  height: number;
+  phase: number;
+}
+
 export default function CityScene() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -80,6 +88,15 @@ export default function CityScene() {
       blinkPhase: Math.random() * Math.PI * 2,
       scanActive: false,
       scanTimer: Math.random() * 300,
+    }));
+
+    // Generate street walkers — people and chihuahuas
+    const walkers: Walker[] = Array.from({ length: 12 }, () => ({
+      x: Math.random() * canvas.width,
+      speed: (0.2 + Math.random() * 0.5) * (Math.random() > 0.5 ? 1 : -1),
+      hasDog: Math.random() > 0.5,
+      height: 6 + Math.random() * 4,
+      phase: Math.random() * Math.PI * 2,
     }));
 
     let tick = 0;
@@ -276,6 +293,65 @@ export default function CityScene() {
           ctx.beginPath();
           ctx.moveTo(d.x - scanWidth, scanY);
           ctx.lineTo(d.x + scanWidth, scanY);
+          ctx.stroke();
+        }
+      });
+
+      // Draw street walkers — people and chihuahuas at ground level
+      walkers.forEach((w) => {
+        w.x += w.speed;
+        const groundY = baseY - 4;
+        const bobble = Math.sin(tick * 0.08 + w.phase) * 0.5;
+
+        // Wrap around
+        if (w.x > canvas.width + 20) w.x = -20;
+        if (w.x < -20) w.x = canvas.width + 20;
+
+        // Walking leg animation
+        const legSwing = Math.sin(tick * 0.1 + w.phase) * 2;
+
+        // Person body — tiny pixel silhouette
+        ctx.fillStyle = "rgba(0, 255, 136, 0.25)";
+        // Head
+        ctx.fillRect(w.x - 1, groundY - w.height + bobble, 3, 3);
+        // Torso
+        ctx.fillRect(w.x - 1, groundY - w.height + 3 + bobble, 3, w.height * 0.4);
+        // Legs
+        ctx.fillStyle = "rgba(0, 255, 136, 0.2)";
+        ctx.fillRect(w.x - 1 + legSwing * 0.3, groundY - w.height * 0.4 + bobble, 1, w.height * 0.4);
+        ctx.fillRect(w.x + 1 - legSwing * 0.3, groundY - w.height * 0.4 + bobble, 1, w.height * 0.4);
+
+        // Chihuahua walking alongside
+        if (w.hasDog) {
+          const leashDir = w.speed > 0 ? 1 : -1;
+          const dogX = w.x + leashDir * (8 + Math.sin(tick * 0.06 + w.phase) * 3);
+          const dogBob = Math.sin(tick * 0.15 + w.phase) * 0.5;
+          const dogY = groundY - 2;
+
+          // Leash
+          ctx.strokeStyle = "rgba(0, 255, 136, 0.1)";
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(w.x + leashDir * 1, groundY - w.height * 0.5 + bobble);
+          ctx.lineTo(dogX, dogY - 2 + dogBob);
+          ctx.stroke();
+
+          // Dog body — tiny chihuahua shape
+          ctx.fillStyle = "rgba(0, 255, 136, 0.25)";
+          // Body
+          ctx.fillRect(dogX - 2, dogY - 2 + dogBob, 4, 2);
+          // Head (slightly bigger for chihuahua proportions)
+          ctx.fillRect(dogX + leashDir * 2, dogY - 3 + dogBob, 2, 2);
+          // Legs
+          const dogLeg = Math.sin(tick * 0.15 + w.phase) * 1;
+          ctx.fillRect(dogX - 1 + dogLeg * 0.3, dogY + dogBob, 1, 2);
+          ctx.fillRect(dogX + 1 - dogLeg * 0.3, dogY + dogBob, 1, 2);
+          // Tail — sticking up (chihuahua style)
+          ctx.strokeStyle = "rgba(0, 255, 136, 0.2)";
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(dogX - leashDir * 2, dogY - 1 + dogBob);
+          ctx.lineTo(dogX - leashDir * 3, dogY - 4 + dogBob);
           ctx.stroke();
         }
       });
