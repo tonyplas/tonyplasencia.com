@@ -1,30 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
 
-interface Post {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  tags: string[];
-}
-
-const posts: Post[] = [
-  {
-    slug: "fueling-the-agent-engine",
-    title: "Fueling the Agent Engine",
-    date: "2026-03-25",
-    excerpt:
-      "From Uber to Underdog to Griffain to MoonPay — a decade of building at the frontier. Here's what I've learned about AI agents, crypto, and why the future is autonomous.",
-    tags: ["ai-agents", "crypto", "founder"],
-  },
-];
-
 export default function Blog() {
+  const posts = getAllPosts();
+
   return (
     <section className="max-w-3xl mx-auto px-6 py-16">
       <div className="text-accent/30 text-sm mb-2">// blog</div>

@@ -14,17 +14,17 @@ interface TimelineItem {
 const experience: TimelineItem[] = [
   {
     period: "Oct 2025 - Present",
-    role: "GTM Agents",
+    role: "GTM Agents (joined via Acquisition)",
     company: "MoonPay",
     description:
-      "Giving agents access to the OS for modern money movement.",
+      "Joined MoonPay through the acquisition of Griffain + Underdog Protocol. Giving agents access to the OS for modern money movement.",
   },
   {
     period: "2021 - 2025",
     role: "Co-Founder, BD & Partnerships",
     company: "Griffain + Underdog Protocol",
     description:
-      "Built a profitable digital asset and AI business on Solana before joining MoonPay via acquisition. Led all Business Development, Partnerships, and Product. Consumer app with 80K users, $22M ARR, and $20M in volume. SaaS at $1.5M ARR with 250+ customers. Backed by UnderdogLabs, E^I Ventures, and OneBlock Capital.",
+      "Built a profitable digital asset and AI business on Solana — acquired by MoonPay in 2025. Led all Business Development, Partnerships, and Product. Consumer app with 80K users, $22M ARR, and $20M in volume. SaaS at $1.5M ARR with 250+ customers. Backed by UnderdogLabs, E^I Ventures, and OneBlock Capital.",
   },
   {
     period: "Jan 2020 - Jun 2021",

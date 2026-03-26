@@ -1,37 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-
-interface Post {
-  slug: string;
-  title: string;
-  date: string;
-  content: string;
-  tags: string[];
-}
-
-const posts: Record<string, Post> = {
-  "fueling-the-agent-engine": {
-    slug: "fueling-the-agent-engine",
-    title: "Fueling the Agent Engine",
-    date: "2026-03-25",
-    tags: ["ai-agents", "crypto", "founder"],
-    content: `I've spent the last decade chasing the same thread: how do you make powerful technology accessible to everyone?
-
-It started at Uber in 2016. Six years in Silicon Valley taught me how growth works at scale — how to find leverage, how to build systems that compound, and how to move fast without breaking the things that matter.
-
-Then I went down the crypto rabbit hole. I co-founded Underdog Protocol to make digital assets accessible via API. We scaled to $1M ARR, managed millions in digital assets, and proved that blockchain infrastructure could be developer-friendly. We raised our seed round from Oneblock Capital, eiV ventures, and Underdog Labs.
-
-In 2024, I co-founded Griffain — an AI-powered super app for crypto built on Solana. The idea was simple: you should be able to search anything and do anything onchain in natural language. Personalize your agent, and let it work for you. The market validated the thesis — we hit a market cap north of $480M.
-
-Now I'm at MoonPay, working on the next chapter: giving AI agents direct access to onchain capital markets. With one command — npm install -g @moonpay/cli — you can give anything you build access to prediction markets, virtual accounts, on/off ramps, cross-chain swaps, and more.
-
-The pattern I keep seeing is this: the future belongs to autonomous agents that can operate in financial markets, execute complex strategies, and do it all without human babysitting. We're building the rails for that future.
-
-The agent engine is warming up. Let's see where it goes.`,
-  },
-};
+import { getPost, getAllPosts } from "@/lib/blog";
 
 type Params = Promise<{ slug: string }>;
+
+export async function generateStaticParams() {
+  return getAllPosts().map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -39,15 +14,90 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = posts[slug];
+  const post = getPost(slug);
   if (!post) return { title: "Not Found" };
   return { title: post.title };
 }
 
+function renderMarkdown(content: string) {
+  const blocks: { type: string; text: string }[] = [];
+  const lines = content.split("\n");
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // blank line
+    if (line.trim() === "") {
+      i++;
+      continue;
+    }
+
+    // heading
+    const headingMatch = line.match(/^(#{1,3})\s+(.+)/);
+    if (headingMatch) {
+      blocks.push({ type: `h${headingMatch[1].length}`, text: headingMatch[2] });
+      i++;
+      continue;
+    }
+
+    // blockquote
+    if (line.startsWith(">")) {
+      let quote = "";
+      while (i < lines.length && (lines[i].startsWith(">") || (lines[i].trim() !== "" && quote))) {
+        const qLine = lines[i].startsWith(">") ? lines[i].replace(/^>\s?/, "") : lines[i];
+        quote += (quote ? " " : "") + qLine;
+        i++;
+        if (i < lines.length && lines[i].trim() === "") break;
+      }
+      blocks.push({ type: "blockquote", text: quote });
+      continue;
+    }
+
+    // italic line (starts with *)
+    if (line.startsWith("*") && line.endsWith("*") && !line.startsWith("**")) {
+      blocks.push({ type: "italic", text: line.slice(1, -1) });
+      i++;
+      continue;
+    }
+
+    // paragraph — collect consecutive non-blank, non-special lines
+    let para = line;
+    i++;
+    while (i < lines.length && lines[i].trim() !== "" && !lines[i].startsWith("#") && !lines[i].startsWith(">")) {
+      para += " " + lines[i];
+      i++;
+    }
+    blocks.push({ type: "p", text: para });
+  }
+
+  return blocks;
+}
+
+function InlineText({ text }: { text: string }) {
+  // handle **bold** and *italic*
+  const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return <strong key={i} className="text-foreground font-bold">{part.slice(2, -2)}</strong>;
+        }
+        if (part.startsWith("*") && part.endsWith("*")) {
+          return <em key={i} className="italic">{part.slice(1, -1)}</em>;
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </>
+  );
+}
+
 export default async function BlogPost({ params }: { params: Params }) {
   const { slug } = await params;
-  const post = posts[slug];
+  const post = getPost(slug);
   if (!post) notFound();
+
+  const blocks = renderMarkdown(post.content);
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
@@ -61,12 +111,26 @@ export default async function BlogPost({ params }: { params: Params }) {
           <span key={tag} className="text-xs text-muted/50">#{tag}</span>
         ))}
       </div>
-      <div className="prose prose-invert max-w-none">
-        {post.content.split("\n\n").map((paragraph, i) => (
-          <p key={i} className="text-muted leading-relaxed mb-4">
-            {paragraph}
-          </p>
-        ))}
+      <div className="space-y-4">
+        {blocks.map((block, i) => {
+          if (block.type === "h2") {
+            return <h2 key={i} className="text-xl font-bold text-accent mt-8 mb-2">{block.text}</h2>;
+          }
+          if (block.type === "h3") {
+            return <h3 key={i} className="text-lg font-bold text-foreground mt-6 mb-2">{block.text}</h3>;
+          }
+          if (block.type === "blockquote") {
+            return (
+              <blockquote key={i} className="border-l-2 border-accent/30 pl-4 text-muted/70 italic my-4">
+                <InlineText text={block.text} />
+              </blockquote>
+            );
+          }
+          if (block.type === "italic") {
+            return <p key={i} className="text-muted leading-relaxed italic"><InlineText text={block.text} /></p>;
+          }
+          return <p key={i} className="text-muted leading-relaxed"><InlineText text={block.text} /></p>;
+        })}
       </div>
       <a href="/blog" className="text-accent/50 text-sm mt-8 inline-block hover:text-accent transition-colors">
         &lt;- back to blog
