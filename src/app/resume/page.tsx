@@ -25,20 +25,12 @@ const experience: TimelineItem[] = [
     company: "MoonPay",
     url: "https://www.moonpay.com",
     description:
-      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure. Built a partner ecosystem of 40+ companies and lead GTM end-to-end across multiple 0-to-1 products.",
+      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure, including multiple 0-to-1 launches.",
     highlights: [
       {
         label: "Paybox",
         detail:
-          "370K users onboarded · 600K wallets connected · 300K transactions · 11.4M X views · Top 10 Finance on iOS",
-      },
-      {
-        label: "Moongate",
-        detail: "300% revenue growth · $500K revenue",
-      },
-      {
-        label: "MoonAgents",
-        detail: "40K installs · $1M+ transaction volume",
+          "370K users onboarded · 11.4M X views · #1 Finance app on iOS",
       },
     ],
   },
