@@ -26,8 +26,8 @@ export default function Home() {
       </h1>
 
       <p className="text-body text-lg max-w-xl leading-relaxed">
-        Built startups in crypto + AI agents. Now leading GTM for agents at{" "}
-        <span className="text-accent">MoonPay</span>. Thinking deeply about how
+        Built startups in crypto + AI agents. Now Head of GTM at{" "}
+        <span className="text-accent">MoonPay Labs</span>. Thinking deeply about how
         to use technology to make people&apos;s lives easier.
       </p>
 
