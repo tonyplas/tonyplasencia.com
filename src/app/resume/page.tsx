@@ -27,11 +27,7 @@ const experience: TimelineItem[] = [
     description:
       "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure, including multiple 0-to-1 launches.",
     highlights: [
-      {
-        label: "Paybox",
-        detail:
-          "370K users onboarded · 11.4M X views · #1 Finance app on iOS",
-      },
+      { label: "Paybox", detail: "370K users · 11.4M X views · #1 Finance app on iOS" },
     ],
   },
   {
@@ -40,28 +36,48 @@ const experience: TimelineItem[] = [
     company: "Edith Labs (Griffain + Underdog Protocol)",
     url: "https://griffain.com",
     description:
-      "Built and operated two million-dollar software businesses across Solana infrastructure and AI agents. Led business development, partnerships, go-to-market, and product strategy. Underdog served hundreds of developer and business customers; Griffain grew to 80K signed-in users and thousands of paid users. Raised outside capital, built a profitable business, and navigated the company from developer infrastructure into consumer AI agents before joining MoonPay.",
+      "Built and operated two million-dollar software businesses across Solana infrastructure and AI agents. Led business development, partnerships, go-to-market, and product strategy. Raised outside capital, built a profitable business, and navigated the company from developer infrastructure into consumer AI agents before joining MoonPay.",
+    highlights: [
+      { label: "Griffain", detail: "80K signed-in users · 3,388 paid users" },
+      { label: "Underdog", detail: "$1M ARR peak · ~350 active customers" },
+      { label: "Capital", detail: "$500K pre-seed raised" },
+    ],
   },
   {
     period: "Jan 2020 - Jun 2021",
     role: "BD, Partnerships & Growth",
     company: "Thumbtack (Setter)",
     description:
-      "Joined Setter, a Sequoia- and NFX-backed home management company, before its acquisition by Thumbtack. Managed a 15-person BDR team, surpassed quota, and helped drive more than $1.3M in home-services value. Broke into American Family Insurance and Nationwide, opening strategic partnership discussions that helped move the business upstream toward institutional distribution during the period that culminated in Thumbtack's acquisition.",
+      "Joined Setter, a Sequoia- and NFX-backed home management company, before its acquisition by Thumbtack. Managed a 15-person BDR team, surpassed quota, and opened strategic partnership discussions with American Family Insurance and Nationwide, helping move the business upstream toward institutional distribution during the period that culminated in Thumbtack's acquisition.",
+    highlights: [
+      { label: "Leadership", detail: "15-person BDR team" },
+      { label: "Commercial", detail: "$250K home-services value" },
+      { label: "Enterprise", detail: "American Family · Nationwide" },
+    ],
   },
   {
     period: "Aug 2018 - Jan 2020",
     role: "Growth, Merchants",
     company: "Ritual.co",
     description:
-      "Worked across merchant acquisition, performance, customer experience, and retention for a Sequoia- and Greylock-backed marketplace. Grew San Francisco, helped launch Oakland and San Jose, onboarded 200+ SMBs, and increased orders across managed merchants.",
+      "Worked across merchant acquisition, performance, customer experience, and retention for a Sequoia- and Greylock-backed marketplace. Grew San Francisco and helped launch Oakland and San Jose.",
+    highlights: [
+      { label: "Merchants", detail: "200+ SMBs onboarded" },
+      { label: "Growth", detail: "33% order increase across managed merchants" },
+      { label: "Expansion", detail: "SF · Oakland · San Jose" },
+    ],
   },
   {
     period: "Aug 2016 - Aug 2018",
     role: "Growth, Special Projects",
     company: "Uber",
     description:
-      "Started on the front lines of driver acquisition and retention. Onboarded 1,000+ drivers in San Francisco, improved the onboarding experience, and helped launch an in-person acquisition model that expanded to five markets.",
+      "Started on the front lines of driver acquisition and retention. Improved the onboarding experience and helped launch an in-person acquisition model that expanded nationally.",
+    highlights: [
+      { label: "Acquisition", detail: "1,000+ drivers onboarded" },
+      { label: "Expansion", detail: "Kiosk model scaled to 5 markets" },
+      { label: "Experience", detail: "CSAT improved 79% → 88%" },
+    ],
   },
 ];
 
@@ -82,12 +98,8 @@ export default function Resume() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-16">
       <div className="text-accent/30 text-sm mb-2">// work</div>
-      <h1 className="text-3xl font-bold mb-3">
-        <span className="text-accent glow">Work</span>
-      </h1>
-      <p className="text-muted text-sm mb-10">
-        A decade learning how products, distribution, and organizations get built.
-      </p>
+      <h1 className="text-3xl font-bold mb-3"><span className="text-accent glow">Work</span></h1>
+      <p className="text-muted text-sm mb-10">A decade learning how products, distribution, and organizations get built.</p>
 
       <div className="mb-12">
         <h2 className="text-sm text-accent mb-6">&gt; experience.log()</h2>
@@ -98,34 +110,15 @@ export default function Resume() {
               <div className="text-xs text-muted mb-1">{item.period}</div>
               <div className="font-bold text-foreground">{item.role}</div>
               <div className="text-sm text-muted mb-2">
-                {item.url ? (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-accent transition-colors"
-                  >
-                    {item.company} ↗
-                  </a>
-                ) : (
-                  item.company
-                )}
+                {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">{item.company} ↗</a> : item.company}
               </div>
               <p className="text-sm text-body leading-relaxed">{item.description}</p>
-
               {item.highlights && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
                   {item.highlights.map((highlight) => (
-                    <div
-                      key={highlight.label}
-                      className="border border-surface-border bg-surface/30 p-4"
-                    >
-                      <div className="text-xs text-accent font-mono mb-2">
-                        {highlight.label}
-                      </div>
-                      <div className="text-xs text-body leading-relaxed">
-                        {highlight.detail}
-                      </div>
+                    <div key={highlight.label} className="border border-surface-border bg-surface/30 p-4">
+                      <div className="text-xs text-accent font-mono mb-2">{highlight.label}</div>
+                      <div className="text-xs text-body leading-relaxed">{highlight.detail}</div>
                     </div>
                   ))}
                 </div>
@@ -152,30 +145,11 @@ export default function Resume() {
             <div key={group.category} className="border border-surface-border p-4 bg-surface/30">
               <h3 className="text-xs text-accent/60 mb-3">[{group.category}]</h3>
               <div className="flex flex-wrap gap-2">
-                {group.items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs border border-accent/20 text-body px-2 py-1 hover:border-accent/50 hover:text-accent transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                {group.items.map((skill) => <span key={skill} className="text-xs border border-accent/20 text-body px-2 py-1">{skill}</span>)}
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="pt-8 border-t border-surface-border text-center">
-        <p className="text-muted text-sm mb-4">Interested in working together?</p>
-        <a
-          href="https://t.me/tonyplasencia"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-accent/10 border border-accent text-accent px-6 py-2.5 text-sm font-bold hover:bg-accent/20 transition-colors"
-        >
-          Work with me &rarr;
-        </a>
       </div>
     </section>
   );
