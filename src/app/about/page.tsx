@@ -34,7 +34,7 @@ export default function About() {
           alt="Tony Plasencia"
           width={100}
           height={100}
-          className="rounded-full border-2 border-accent/30 flex-shrink-0"
+          className="rounded-full border-2 border-accent/30 flex-shrink-0 object-cover"
         />
         <p className="text-body text-sm leading-relaxed">
           Tony Plasencia &mdash; founder, operator, and student of agency.
@@ -73,6 +73,19 @@ export default function About() {
           accessible. It&apos;s how to build the products, organizations, and institutions
           around that technology responsibly.
         </p>
+
+        <div className="border border-surface-border bg-surface/30 p-2">
+          <Image
+            src="/panel.jpg"
+            alt="Tony Plasencia speaking on stage"
+            width={400}
+            height={400}
+            className="w-full max-w-sm object-cover"
+          />
+          <div className="text-xs text-muted/60 font-mono px-2 pt-2 pb-1">
+            &gt; in_the_wild: talking products, markets, and what comes next
+          </div>
+        </div>
 
         <p>
           Philosophy still shapes how I think. I&apos;ve spent time with Foucault, Nietzsche,
