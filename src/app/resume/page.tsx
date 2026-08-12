@@ -51,7 +51,7 @@ const experience: TimelineItem[] = [
       "Joined Setter, a Sequoia- and NFX-backed home management company, before its acquisition by Thumbtack. Managed a 15-person BDR team, surpassed quota, and opened strategic partnership discussions with American Family Insurance and Nationwide, helping move the business upstream toward institutional distribution during the period that culminated in Thumbtack's acquisition.",
     highlights: [
       { label: "Leadership", detail: "15-person BDR team" },
-      { label: "Commercial", detail: "$1.3M+ home-services value" },
+      { label: "Commercial", detail: "$250K home-services value" },
       { label: "Enterprise", detail: "American Family · Nationwide" },
     ],
   },
