@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resume",
+  title: "Work",
 };
 
 interface TimelineItem {
@@ -19,61 +19,63 @@ const experience: TimelineItem[] = [
     company: "MoonPay",
     url: "https://www.moonpay.com",
     description:
-      "Joined MoonPay through the acquisition of Griffain. Leading GTM across all MoonPay Labs products — the R&D arm of MoonPay — including Agents, Moongate, and Paybox.",
+      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, and new financial infrastructure. Built a partner ecosystem of 40+ companies, led GTM end-to-end across multiple products, and helped products drive more than $1M in transaction volume.",
   },
   {
     period: "2021 - 2025",
-    role: "Co-Founder, BD & Partnerships",
+    role: "Co-Founder, GTM & Product",
     company: "Edith Labs (Griffain + Underdog Protocol)",
     url: "https://griffain.com",
     description:
-      "Built a profitable digital asset and AI business on Solana. Griffain acquired by MoonPay in 2025. Led all Business Development, Partnerships, and Product. Consumer app with 80K users, $22M ARR, and $20M in volume. SaaS at $1.5M ARR with 250+ customers. Backed by UnderdogLabs, E^I Ventures, and OneBlock Capital.",
+      "Built and operated products across Solana infrastructure and AI agents. Led business development, partnerships, go-to-market, and product strategy. Underdog served hundreds of developer and business customers; Griffain grew to 80K signed-in users and thousands of paid users. Raised outside capital, built a profitable business, and navigated the company from developer infrastructure into consumer AI agents before joining MoonPay.",
   },
   {
     period: "Jan 2020 - Jun 2021",
-    role: "BD & Partnerships",
+    role: "BD, Partnerships & Growth",
     company: "Thumbtack (Setter)",
     description:
-      "Setter was a virtual property management and concierge company backed by Sequoia and NFX until being acquired by Thumbtack. Sales, Product Marketing, and Ops. Managed a team of 15 BDRs with 100% quota attainment. Closed over $1.3M in Home Services and worked on partnerships with insurance firms like American Family.",
+      "Joined Setter, a Sequoia- and NFX-backed home management company, before its acquisition by Thumbtack. Managed a 15-person BDR team, surpassed quota, and helped drive more than $1.3M in home-services value. Opened strategic partnership conversations with American Family Insurance and Nationwide, helping move the business upstream toward institutional distribution during the period that culminated in Thumbtack's acquisition.",
   },
   {
     period: "Aug 2018 - Jan 2020",
     role: "Growth, Merchants",
     company: "Ritual.co",
     description:
-      "Ritual is a food ordering app for fast & easy pickup backed by Sequoia Capital and Greylock. Focused on merchant acquisition, performance, customer experience, and retention. Grew San Francisco and launched Oakland & San Jose. Onboarded over 200 SMBs.",
+      "Worked across merchant acquisition, performance, customer experience, and retention for a Sequoia- and Greylock-backed marketplace. Grew San Francisco, helped launch Oakland and San Jose, onboarded 200+ SMBs, and increased orders across managed merchants.",
   },
   {
     period: "Aug 2016 - Aug 2018",
     role: "Growth, Special Projects",
     company: "Uber",
     description:
-      "Driver acquisition and retention through in-person sales and launching projects across new markets. Onboarded over 1,000 Uber drivers and scaled projects to 5 markets.",
+      "Started on the front lines of driver acquisition and retention. Onboarded 1,000+ drivers in San Francisco, improved the onboarding experience, and helped launch an in-person acquisition model that expanded to five markets.",
   },
 ];
 
 const education = {
   school: "San Francisco State University",
-  degree: "B.A. Political Philosophy & Economy",
-  gpa: "3.4 / 4.0",
-  extra: "D1-AA Rugby — 3-year starter",
+  degree: "B.A. Political Science",
+  gpa: "3.2 / 4.0",
+  extra: "Rugby — 3-year starter",
 };
 
-const skills = [
-  { category: "Skills", items: ["Sales", "GTM", "Vibe Coding", "Content Creation", "Virality", "0-1", "Cold Calling"] },
-  { category: "Tools", items: ["CRM Tools", "Drive", "Claude Code", "Codex"] },
+const capabilities = [
+  { category: "Functions", items: ["GTM", "Partnerships", "Product Strategy", "Zero-to-One", "Sales Leadership"] },
+  { category: "Domains", items: ["AI Agents", "Fintech", "Crypto Infrastructure", "Marketplaces"] },
   { category: "Languages", items: ["English", "Spanish"] },
 ];
 
 export default function Resume() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-16">
-      <div className="text-accent/30 text-sm mb-2">// resume</div>
-      <h1 className="text-3xl font-bold mb-8">
-        <span className="text-accent glow">Resume</span>
+      <div className="text-accent/30 text-sm mb-2">// work</div>
+      <h1 className="text-3xl font-bold mb-3">
+        <span className="text-accent glow">Work</span>
       </h1>
+      <p className="text-muted text-sm mb-10">
+        A decade learning how products, distribution, and organizations get built.
+      </p>
 
-      {/* Experience */}
       <div className="mb-12">
         <h2 className="text-sm text-accent mb-6">&gt; experience.log()</h2>
         <div className="space-y-8">
@@ -81,9 +83,7 @@ export default function Resume() {
             <div key={item.period + item.company} className="border-l border-accent/20 pl-6 relative">
               <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-accent/40 rounded-full" />
               <div className="text-xs text-muted mb-1">{item.period}</div>
-              <div className="font-bold text-foreground">
-                {item.role}
-              </div>
+              <div className="font-bold text-foreground">{item.role}</div>
               <div className="text-sm text-muted mb-2">
                 {item.url ? (
                   <a
@@ -98,13 +98,12 @@ export default function Resume() {
                   item.company
                 )}
               </div>
-              <p className="text-sm text-body">{item.description}</p>
+              <p className="text-sm text-body leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Education */}
       <div className="mb-12">
         <h2 className="text-sm text-accent mb-6">&gt; education.get()</h2>
         <div className="border border-surface-border p-6 bg-surface/30">
@@ -115,11 +114,10 @@ export default function Resume() {
         </div>
       </div>
 
-      {/* Skills */}
       <div className="mb-12">
-        <h2 className="text-sm text-accent mb-6">&gt; skills.scan()</h2>
+        <h2 className="text-sm text-accent mb-6">&gt; capabilities.scan()</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {skills.map((group) => (
+          {capabilities.map((group) => (
             <div key={group.category} className="border border-surface-border p-4 bg-surface/30">
               <h3 className="text-xs text-accent/60 mb-3">[{group.category}]</h3>
               <div className="flex flex-wrap gap-2">
