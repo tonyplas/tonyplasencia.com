@@ -4,12 +4,18 @@ export const metadata: Metadata = {
   title: "Work",
 };
 
+interface Highlight {
+  label: string;
+  detail: string;
+}
+
 interface TimelineItem {
   period: string;
   role: string;
   company: string;
   url?: string;
   description: string;
+  highlights?: Highlight[];
 }
 
 const experience: TimelineItem[] = [
@@ -19,7 +25,22 @@ const experience: TimelineItem[] = [
     company: "MoonPay",
     url: "https://www.moonpay.com",
     description:
-      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure. Helped scale Paybox to 370K users onboarded, 600K wallets connected, 40K mobile installs, 300K transactions, and 11.4M views on X, reaching the Top 10 Finance apps on iOS. Helped grow Moongate revenue 300% to $500K, built a partner ecosystem of 40+ companies, and led GTM end-to-end across multiple products.",
+      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure. Built a partner ecosystem of 40+ companies and lead GTM end-to-end across multiple 0-to-1 products.",
+    highlights: [
+      {
+        label: "Paybox",
+        detail:
+          "370K users onboarded · 600K wallets connected · 300K transactions · 11.4M X views · Top 10 Finance on iOS",
+      },
+      {
+        label: "Moongate",
+        detail: "300% revenue growth · $500K revenue",
+      },
+      {
+        label: "MoonAgents",
+        detail: "40K installs · $1M+ transaction volume",
+      },
+    ],
   },
   {
     period: "2021 - 2025",
@@ -99,6 +120,24 @@ export default function Resume() {
                 )}
               </div>
               <p className="text-sm text-body leading-relaxed">{item.description}</p>
+
+              {item.highlights && (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                  {item.highlights.map((highlight) => (
+                    <div
+                      key={highlight.label}
+                      className="border border-surface-border bg-surface/30 p-4"
+                    >
+                      <div className="text-xs text-accent font-mono mb-2">
+                        {highlight.label}
+                      </div>
+                      <div className="text-xs text-body leading-relaxed">
+                        {highlight.detail}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
