@@ -3,19 +3,27 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Writing",
 };
 
+const selectedSlugs = [
+  "agency",
+  "fueling-the-agent-engine",
+  "thoughts-on-agents-jtbd-trading",
+];
+
 export default function Blog() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().filter((post) => selectedSlugs.includes(post.slug));
 
   return (
     <section className="max-w-3xl mx-auto px-6 py-16">
-      <div className="text-accent/30 text-sm mb-2">// blog</div>
+      <div className="text-accent/30 text-sm mb-2">// writing</div>
       <h1 className="text-3xl font-bold mb-2">
         <span className="text-accent glow">Selected Writing</span>
       </h1>
-      <p className="text-muted text-sm mb-8">Essays on technology, philosophy, and building.</p>
+      <p className="text-muted text-sm mb-8">
+        Essays on agency, technology, markets, and building.
+      </p>
 
       <div className="space-y-6">
         {posts.map((post) => (
@@ -40,6 +48,10 @@ export default function Blog() {
           </Link>
         ))}
       </div>
+
+      <p className="text-xs text-muted/50 mt-8">
+        Older academic writing remains available by direct link but is intentionally not part of this selected index.
+      </p>
     </section>
   );
 }
