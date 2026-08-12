@@ -37,7 +37,7 @@ export default function About() {
           className="rounded-full border-2 border-accent/30 flex-shrink-0"
         />
         <p className="text-body text-sm leading-relaxed">
-          Efren &ldquo;Tony&rdquo; Plasencia &mdash; builder, founder, philosopher at heart.
+          Tony Plasencia &mdash; builder, founder, philosopher at heart.
         </p>
       </div>
 

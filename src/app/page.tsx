@@ -21,7 +21,7 @@ export default function Home() {
       />
 
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-        <span className="text-accent glow">Efren &ldquo;Tony&rdquo;</span>{" "}
+        <span className="text-accent glow">Tony</span>{" "}
         <span className="text-foreground">Plasencia</span>
       </h1>
 
