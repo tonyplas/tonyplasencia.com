@@ -92,7 +92,7 @@ export default function Resume() {
                     rel="noopener noreferrer"
                     className="hover:text-accent transition-colors"
                   >
-                    {item.company} &nearr;
+                    {item.company} ↗
                   </a>
                 ) : (
                   item.company

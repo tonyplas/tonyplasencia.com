@@ -1,11 +1,5 @@
 import Image from "next/image";
 
-const metrics = [
-  { value: "80K", label: "users" },
-  { value: "$22M", label: "ARR" },
-  { value: "Acquired", label: "by MoonPay" },
-];
-
 export default function Home() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-24 flex flex-col items-start gap-6">
@@ -30,15 +24,6 @@ export default function Home() {
         <span className="text-accent">MoonPay Labs</span>. Thinking deeply about how
         to use technology to make people&apos;s lives easier.
       </p>
-
-      <div className="flex gap-8 mt-2">
-        {metrics.map((m) => (
-          <div key={m.label} className="flex flex-col">
-            <span className="text-accent text-2xl font-bold glow">{m.value}</span>
-            <span className="text-muted text-xs">{m.label}</span>
-          </div>
-        ))}
-      </div>
 
       <div className="flex flex-wrap gap-4 mt-4">
         <a
