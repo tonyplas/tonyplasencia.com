@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const highlights = [
-  "Founder → MoonPay",
+  "Exited founder",
   "Built 2 $1M+ software businesses",
   "Helped scale a Top 10 Finance app on iOS",
 ];
