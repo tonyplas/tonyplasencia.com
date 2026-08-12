@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+const highlights = [
+  "Founder through strategic exit",
+  "Built 2 $1M+ software businesses",
+  "Helped scale a Top 10 Finance app on iOS",
+];
+
 export default function Home() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-24 flex flex-col items-start gap-6">
@@ -20,14 +26,21 @@ export default function Home() {
       </h1>
 
       <p className="text-body text-lg max-w-2xl leading-relaxed">
-        Founder and operator exploring technology, markets, and agency. I built
-        companies in crypto and AI agents and now lead GTM at{" "}
-        <span className="text-accent">MoonPay Labs</span>. I&apos;m interested in
-        making powerful technology useful to more people.
+        Founder and operator exploring technology, markets, and agency. I build
+        products that make powerful technology useful to more people and now lead
+        GTM at <span className="text-accent">MoonPay Labs</span>.
       </p>
 
-      <div className="text-sm text-muted font-mono border-l border-accent/20 pl-4 py-1">
-        Uber &rarr; Ritual &rarr; Setter &rarr; Underdog &rarr; Griffain &rarr; MoonPay
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mt-2">
+        {highlights.map((highlight) => (
+          <div
+            key={highlight}
+            className="border border-surface-border bg-surface/30 px-4 py-3 text-xs text-body font-mono leading-relaxed"
+          >
+            <span className="text-accent/40">$ </span>
+            {highlight}
+          </div>
+        ))}
       </div>
 
       <div className="flex flex-wrap gap-4 mt-4">
