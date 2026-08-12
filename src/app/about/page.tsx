@@ -37,41 +37,54 @@ export default function About() {
           className="rounded-full border-2 border-accent/30 flex-shrink-0"
         />
         <p className="text-body text-sm leading-relaxed">
-          Tony Plasencia &mdash; builder, founder, philosopher at heart.
+          Tony Plasencia &mdash; founder, operator, and student of agency.
         </p>
       </div>
 
       <div className="space-y-6 text-body leading-relaxed">
         <p>
-          I am Tony. I enjoy watching <span className="text-accent">Arsenal Football Club</span> while
-          drinking Guinness and competing Brazilian Jiu Jitsu at 10th Planet in Oakland.
+          I&apos;m Tony. I watch <span className="text-accent">Arsenal Football Club</span>,
+          drink Guinness, and compete in Brazilian Jiu Jitsu at 10th Planet in Oakland.
+          Most of my working life has been spent around marketplaces, startups, crypto,
+          and AI.
         </p>
 
         <p>
-          I&apos;ve spent the last decade figuring out how to use technology to make
-          people&apos;s lives better and easier. I started at{" "}
-          <span className="text-accent">Uber</span>{" "}
-          where I figured out how to sell opportunity, and now I&apos;m at{" "}
-          <span className="text-accent">MoonPay</span>{" "}
-          where I&apos;m giving agents access to the operating system for modern money movement.
+          I studied political science and became fascinated by questions of agency and
+          power: who gets to act, what institutions make possible, and how systems shape
+          individual choices. I didn&apos;t expect those questions to follow me into
+          technology, but they did.
         </p>
 
         <p>
-          I studied Political Philosophy in college where I found a deep appreciation
-          for the writings of Michel Foucault, Friedrich Nietzsche, Hannah Arendt,
-          and Giorgio Agamben. I think deeply about agency, power structures, and
-          technology.
+          At <span className="text-accent">Uber</span>, I saw a marketplace change what
+          people could do with their time and assets. At <span className="text-accent">Setter</span>,
+          I learned that distribution and partnerships can reshape a company&apos;s product
+          strategy. At <span className="text-accent">Underdog</span>, the question became
+          how to make blockchain infrastructure easier for developers to use. At
+          <span className="text-accent"> Griffain</span>, it became whether software itself
+          could act on a person&apos;s behalf.
         </p>
 
         <p>
-          I enjoy learning about product, history, the markets, and how to be a better
-          human. I decided that my skills are best suited as a General in the markets,
-          so I decided to found technology startups. This was super fun.
+          Now I&apos;m at <span className="text-accent">MoonPay</span>, where I work on bringing
+          agentic products and financial infrastructure to a much larger platform. The
+          question I keep coming back to is no longer just how to make powerful technology
+          accessible. It&apos;s how to build the products, organizations, and institutions
+          around that technology responsibly.
         </p>
 
         <p>
-          When I&apos;m not building, you can find me watching Bluey with my chihuahua{" "}
-          <span className="text-accent">Zoey</span>. She&apos;s the real one.
+          Philosophy still shapes how I think. I&apos;ve spent time with Foucault, Nietzsche,
+          Arendt, Agamben, and others who ask uncomfortable questions about power,
+          responsibility, and human action. Building companies has made those questions
+          less abstract and more practical.
+        </p>
+
+        <p>
+          Outside of work I&apos;m usually training, reading about history and markets, or
+          watching Bluey with my chihuahua <span className="text-accent">Zoey</span>.
+          She&apos;s the real one.
         </p>
 
         <p>
@@ -91,19 +104,12 @@ export default function About() {
           <h2 className="text-accent text-sm mb-4">&gt; interests.list()</h2>
           <div className="grid grid-cols-2 gap-3 text-sm">
             {[
-              "Defense Tech",
-              "Autonomous Defense",
-              "Power Grid Tech",
-              "The Singularity",
-              "AI Agents",
-              "Product",
-              "History",
-              "The Markets",
+              "AI & Agents",
+              "Markets",
+              "History & Philosophy",
+              "Critical Infrastructure",
               "Arsenal FC",
               "Brazilian Jiu Jitsu",
-              "Philosophy",
-              "Technology",
-              "Startups",
             ].map((interest) => (
               <div key={interest} className="flex items-center gap-2">
                 <span className="text-accent/40">$</span>
