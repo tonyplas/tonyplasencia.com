@@ -28,6 +28,8 @@ const experience: TimelineItem[] = [
       "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure, including multiple 0-to-1 launches.",
     highlights: [
       { label: "Paybox", detail: "370K users · 11.4M X views · #1 Finance app on iOS" },
+      { label: "Moongate", detail: "300% revenue growth · $500K revenue" },
+      { label: "MoonAgents", detail: "40K installs · $1M+ transaction volume" },
     ],
   },
   {
