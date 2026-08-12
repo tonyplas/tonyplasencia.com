@@ -19,7 +19,7 @@ const experience: TimelineItem[] = [
     company: "MoonPay",
     url: "https://www.moonpay.com",
     description:
-      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, and new financial infrastructure. Built a partner ecosystem of 40+ companies, led GTM end-to-end across multiple products, and helped products drive more than $1M in transaction volume.",
+      "Joined MoonPay with my cofounder following a strategic transaction involving Griffain's team and technology. Lead GTM across MoonPay Labs initiatives spanning AI agents, developer products, consumer apps, and new financial infrastructure. Helped scale Paybox to 370K users onboarded, 600K wallets connected, 40K mobile installs, 300K transactions, and 11.4M views on X, reaching the Top 10 Finance apps on iOS. Helped grow Moongate revenue 300% to $500K, built a partner ecosystem of 40+ companies, and led GTM end-to-end across multiple products.",
   },
   {
     period: "2021 - 2025",
@@ -27,14 +27,14 @@ const experience: TimelineItem[] = [
     company: "Edith Labs (Griffain + Underdog Protocol)",
     url: "https://griffain.com",
     description:
-      "Built and operated products across Solana infrastructure and AI agents. Led business development, partnerships, go-to-market, and product strategy. Underdog served hundreds of developer and business customers; Griffain grew to 80K signed-in users and thousands of paid users. Raised outside capital, built a profitable business, and navigated the company from developer infrastructure into consumer AI agents before joining MoonPay.",
+      "Built and operated two million-dollar software businesses across Solana infrastructure and AI agents. Led business development, partnerships, go-to-market, and product strategy. Underdog served hundreds of developer and business customers; Griffain grew to 80K signed-in users and thousands of paid users. Raised outside capital, built a profitable business, and navigated the company from developer infrastructure into consumer AI agents before joining MoonPay.",
   },
   {
     period: "Jan 2020 - Jun 2021",
     role: "BD, Partnerships & Growth",
     company: "Thumbtack (Setter)",
     description:
-      "Joined Setter, a Sequoia- and NFX-backed home management company, before its acquisition by Thumbtack. Managed a 15-person BDR team, surpassed quota, and helped drive more than $1.3M in home-services value. Opened strategic partnership conversations with American Family Insurance and Nationwide, helping move the business upstream toward institutional distribution during the period that culminated in Thumbtack's acquisition.",
+      "Joined Setter, a Sequoia- and NFX-backed home management company, before its acquisition by Thumbtack. Managed a 15-person BDR team, surpassed quota, and helped drive more than $1.3M in home-services value. Broke into American Family Insurance and Nationwide, opening strategic partnership discussions that helped move the business upstream toward institutional distribution during the period that culminated in Thumbtack's acquisition.",
   },
   {
     period: "Aug 2018 - Jan 2020",
