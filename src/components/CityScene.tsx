@@ -56,7 +56,8 @@ export default function CityScene() {
     let bx = 0;
     for (let i = 0; i < buildingCount; i++) {
       const w = 25 + Math.random() * 50;
-      const h = 80 + Math.random() * 280;
+      const maxH = Math.min(200, canvas.height * 0.25);
+      const h = 60 + Math.random() * maxH;
       const shade = 0.3 + Math.random() * 0.7;
       const windows: Building["windows"] = [];
       const rows = Math.floor(h / 14);
@@ -81,7 +82,7 @@ export default function CityScene() {
     // Generate drones — bigger and more visible
     const drones: Drone[] = Array.from({ length: 7 }, () => ({
       x: Math.random() * canvas.width,
-      y: 60 + Math.random() * (canvas.height * 0.35),
+      y: canvas.height * 0.55 + Math.random() * (canvas.height * 0.2),
       speedX: 0.4 + Math.random() * 1.0,
       speedY: 0,
       size: 3 + Math.random() * 3,
@@ -90,7 +91,6 @@ export default function CityScene() {
       scanTimer: Math.random() * 300,
     }));
 
-    // Generate street walkers — people and chihuahuas
     const walkers: Walker[] = Array.from({ length: 12 }, () => ({
       x: Math.random() * canvas.width,
       speed: (0.2 + Math.random() * 0.5) * (Math.random() > 0.5 ? 1 : -1),
@@ -195,7 +195,7 @@ export default function CityScene() {
 
         if (d.x > canvas.width + 30) {
           d.x = -30;
-          d.y = 60 + Math.random() * (canvas.height * 0.35);
+          d.y = canvas.height * 0.55 + Math.random() * (canvas.height * 0.2);
         }
 
         // Activate scan periodically

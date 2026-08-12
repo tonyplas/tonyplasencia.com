@@ -106,9 +106,9 @@ export default async function BlogPost({ params }: { params: Params }) {
         <span className="text-accent glow">{post.title}</span>
       </h1>
       <div className="flex items-center gap-3 mb-8">
-        <span className="text-xs text-accent/40">{post.date}</span>
+        <span className="text-xs text-muted">{post.date}</span>
         {post.tags.map((tag) => (
-          <span key={tag} className="text-xs text-muted/50">#{tag}</span>
+          <span key={tag} className="text-xs text-muted">#{tag}</span>
         ))}
       </div>
       <div className="space-y-4">
@@ -127,9 +127,9 @@ export default async function BlogPost({ params }: { params: Params }) {
             );
           }
           if (block.type === "italic") {
-            return <p key={i} className="text-muted leading-relaxed italic"><InlineText text={block.text} /></p>;
+            return <p key={i} className="text-body leading-relaxed italic"><InlineText text={block.text} /></p>;
           }
-          return <p key={i} className="text-muted leading-relaxed"><InlineText text={block.text} /></p>;
+          return <p key={i} className="text-body leading-relaxed"><InlineText text={block.text} /></p>;
         })}
       </div>
       <a href="/blog" className="text-accent/50 text-sm mt-8 inline-block hover:text-accent transition-colors">

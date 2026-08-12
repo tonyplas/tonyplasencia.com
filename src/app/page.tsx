@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+const metrics = [
+  { value: "80K", label: "users" },
+  { value: "$22M", label: "ARR" },
+  { value: "Acquired", label: "by MoonPay" },
+];
+
 export default function Home() {
   return (
     <section className="max-w-3xl mx-auto px-6 py-24 flex flex-col items-start gap-6">
@@ -15,27 +21,45 @@ export default function Home() {
       />
 
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-        <span className="text-accent glow">Efren Antonio</span>{" "}
+        <span className="text-accent glow">Efren &ldquo;Tony&rdquo;</span>{" "}
         <span className="text-foreground">Plasencia</span>
       </h1>
 
-      <p className="text-muted text-lg max-w-xl leading-relaxed">
-        Built startups in crypto + AI agents. Thinking deeply about how to use
-        technology to make people&apos;s lives easier. Enjoys Arsenal, BJJ, and learning.
+      <p className="text-body text-lg max-w-xl leading-relaxed">
+        Built startups in crypto + AI agents. Now leading GTM for agents at{" "}
+        <span className="text-accent">MoonPay</span>. Thinking deeply about how
+        to use technology to make people&apos;s lives easier.
       </p>
 
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-8 mt-2">
+        {metrics.map((m) => (
+          <div key={m.label} className="flex flex-col">
+            <span className="text-accent text-2xl font-bold glow">{m.value}</span>
+            <span className="text-muted text-xs">{m.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-4 mt-4">
+        <a
+          href="https://t.me/tonyplasencia"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-accent/10 border border-accent text-accent px-6 py-2.5 text-sm font-bold hover:bg-accent/20 transition-colors"
+        >
+          Work with me &rarr;
+        </a>
         <a
           href="/about"
-          className="border border-accent/30 text-accent px-5 py-2 text-sm hover:bg-accent/10 transition-colors"
+          className="border border-accent/30 text-accent px-5 py-2.5 text-sm hover:bg-accent/10 transition-colors"
         >
           about.exe
         </a>
         <a
           href="/resume"
-          className="border border-surface-border text-muted px-5 py-2 text-sm hover:border-accent/30 hover:text-accent transition-colors"
+          className="border border-surface-border text-muted px-5 py-2.5 text-sm hover:border-accent/30 hover:text-accent transition-colors"
         >
-          resume.pdf
+          resume.exe
         </a>
       </div>
 

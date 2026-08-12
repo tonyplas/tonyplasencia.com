@@ -8,6 +8,7 @@ interface TimelineItem {
   period: string;
   role: string;
   company: string;
+  url?: string;
   description: string;
 }
 
@@ -16,6 +17,7 @@ const experience: TimelineItem[] = [
     period: "Oct 2025 - Present",
     role: "GTM Agents (joined via Acquisition)",
     company: "MoonPay",
+    url: "https://www.moonpay.com",
     description:
       "Joined MoonPay through the acquisition of Griffain + Underdog Protocol. Giving agents access to the OS for modern money movement.",
   },
@@ -23,6 +25,7 @@ const experience: TimelineItem[] = [
     period: "2021 - 2025",
     role: "Co-Founder, BD & Partnerships",
     company: "Griffain + Underdog Protocol",
+    url: "https://griffain.com",
     description:
       "Built a profitable digital asset and AI business on Solana — acquired by MoonPay in 2025. Led all Business Development, Partnerships, and Product. Consumer app with 80K users, $22M ARR, and $20M in volume. SaaS at $1.5M ARR with 250+ customers. Backed by UnderdogLabs, E^I Ventures, and OneBlock Capital.",
   },
@@ -59,7 +62,7 @@ const education = {
 const skills = [
   { category: "Skills", items: ["Sales", "GTM", "Vibe Coding", "Content Creation", "Virality", "0-1", "Cold Calling"] },
   { category: "Tools", items: ["CRM Tools", "Drive", "Claude Code", "Codex"] },
-  { category: "Languages", items: ["English", "Spanish", "Brainrot"] },
+  { category: "Languages", items: ["English", "Spanish"] },
 ];
 
 export default function Resume() {
@@ -77,10 +80,25 @@ export default function Resume() {
           {experience.map((item) => (
             <div key={item.period + item.company} className="border-l border-accent/20 pl-6 relative">
               <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-accent/40 rounded-full" />
-              <div className="text-xs text-accent/50 mb-1">{item.period}</div>
-              <div className="font-bold text-foreground">{item.role}</div>
-              <div className="text-sm text-muted mb-2">{item.company}</div>
-              <p className="text-sm text-muted/80">{item.description}</p>
+              <div className="text-xs text-muted mb-1">{item.period}</div>
+              <div className="font-bold text-foreground">
+                {item.role}
+              </div>
+              <div className="text-sm text-muted mb-2">
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent transition-colors"
+                  >
+                    {item.company} &nearr;
+                  </a>
+                ) : (
+                  item.company
+                )}
+              </div>
+              <p className="text-sm text-body">{item.description}</p>
             </div>
           ))}
         </div>
@@ -91,14 +109,14 @@ export default function Resume() {
         <h2 className="text-sm text-accent mb-6">&gt; education.get()</h2>
         <div className="border border-surface-border p-6 bg-surface/30">
           <div className="font-bold text-foreground">{education.school}</div>
-          <div className="text-sm text-muted">{education.degree}</div>
-          <div className="text-xs text-accent/50 mt-2">GPA: {education.gpa}</div>
-          <div className="text-xs text-muted/60 mt-1">{education.extra}</div>
+          <div className="text-sm text-body">{education.degree}</div>
+          <div className="text-xs text-muted mt-2">GPA: {education.gpa}</div>
+          <div className="text-xs text-muted mt-1">{education.extra}</div>
         </div>
       </div>
 
       {/* Skills */}
-      <div>
+      <div className="mb-12">
         <h2 className="text-sm text-accent mb-6">&gt; skills.scan()</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skills.map((group) => (
@@ -108,7 +126,7 @@ export default function Resume() {
                 {group.items.map((skill) => (
                   <span
                     key={skill}
-                    className="text-xs border border-accent/20 text-muted px-2 py-1 hover:border-accent/50 hover:text-accent transition-colors"
+                    className="text-xs border border-accent/20 text-body px-2 py-1 hover:border-accent/50 hover:text-accent transition-colors"
                   >
                     {skill}
                   </span>
@@ -117,6 +135,18 @@ export default function Resume() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="pt-8 border-t border-surface-border text-center">
+        <p className="text-muted text-sm mb-4">Interested in working together?</p>
+        <a
+          href="https://t.me/tonyplasencia"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-accent/10 border border-accent text-accent px-6 py-2.5 text-sm font-bold hover:bg-accent/20 transition-colors"
+        >
+          Work with me &rarr;
+        </a>
       </div>
     </section>
   );

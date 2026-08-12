@@ -8,6 +8,7 @@
   --accent-glow: rgba(0, 255, 136, 0.15);
   --surface: #12121a;
   --surface-border: #1e1e2e;
+  --body: #b4b4c8;
   --muted: #6b6b80;
 }
 
@@ -19,6 +20,7 @@
   --color-accent-glow: var(--accent-glow);
   --color-surface: var(--surface);
   --color-surface-border: var(--surface-border);
+  --color-body: var(--body);
   --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -53,6 +55,13 @@ body {
 /* Glow effect for accent elements */
 .glow {
   text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent-glow);
+}
+
+/* Content backdrop — protects text from decorative layers */
+.content-backdrop {
+  background: rgba(10, 10, 15, 0.88);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
 }
 
 /* Scanline overlay */

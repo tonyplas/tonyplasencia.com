@@ -36,12 +36,12 @@ export default function About() {
           height={100}
           className="rounded-full border-2 border-accent/30 flex-shrink-0"
         />
-        <p className="text-muted text-sm leading-relaxed">
-          Efren Antonio Plasencia — builder, founder, philosopher at heart.
+        <p className="text-body text-sm leading-relaxed">
+          Efren &ldquo;Tony&rdquo; Plasencia &mdash; builder, founder, philosopher at heart.
         </p>
       </div>
 
-      <div className="space-y-6 text-muted leading-relaxed">
+      <div className="space-y-6 text-body leading-relaxed">
         <p>
           I am Tony. I enjoy watching <span className="text-accent">Arsenal Football Club</span> while
           drinking Guinness and competing Brazilian Jiu Jitsu at 10th Planet in Oakland.
@@ -50,9 +50,10 @@ export default function About() {
         <p>
           I&apos;ve spent the last decade figuring out how to use technology to make
           people&apos;s lives better and easier. I started at{" "}
-          <span className="text-accent">Uber</span> where I figured out how to sell
-          opportunity, and now I&apos;m at <span className="text-accent">MoonPay</span> where
-          I&apos;m giving agents access to the operating system for modern money movement.
+          <span className="text-accent">Uber</span>{" "}
+          where I figured out how to sell opportunity, and now I&apos;m at{" "}
+          <span className="text-accent">MoonPay</span>{" "}
+          where I&apos;m giving agents access to the operating system for modern money movement.
         </p>
 
         <p>
@@ -75,7 +76,15 @@ export default function About() {
 
         <p>
           Feel free to find me{" "}
-          <span className="text-accent">@tonyplasencia</span> on Telegram.
+          <a
+            href="https://t.me/tonyplasencia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline"
+          >
+            @tonyplasencia
+          </a>{" "}
+          on Telegram.
         </p>
 
         <div className="border border-surface-border p-6 mt-8 bg-surface/50">
@@ -125,6 +134,18 @@ export default function About() {
               </a>
             ))}
           </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-surface-border text-center">
+          <p className="text-muted text-sm mb-4">Interested in working together?</p>
+          <a
+            href="https://t.me/tonyplasencia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-accent/10 border border-accent text-accent px-6 py-2.5 text-sm font-bold hover:bg-accent/20 transition-colors"
+          >
+            Work with me &rarr;
+          </a>
         </div>
       </div>
     </section>

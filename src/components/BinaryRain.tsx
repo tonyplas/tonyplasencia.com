@@ -53,14 +53,11 @@ export default function BinaryRain() {
           if (yPos < 0 || yPos > canvas.height) continue;
 
           if (t === 0) {
-            // Lead character — bright white-green
-            ctx.fillStyle = "rgba(180, 255, 200, 0.9)";
+            ctx.fillStyle = "rgba(180, 255, 200, 0.5)";
           } else if (t < 3) {
-            // Near-head — bright green
-            ctx.fillStyle = `rgba(0, 255, 136, ${0.5 - t * 0.1})`;
+            ctx.fillStyle = `rgba(0, 255, 136, ${0.25 - t * 0.05})`;
           } else {
-            // Trail — fading green
-            const alpha = 0.25 * (1 - t / trailLength);
+            const alpha = 0.12 * (1 - t / trailLength);
             ctx.fillStyle = `rgba(0, 255, 136, ${alpha})`;
           }
 
