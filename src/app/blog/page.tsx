@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 const selectedSlugs = [
   "agency",
+  "conviction-and-adaptation",
   "fueling-the-agent-engine",
   "thoughts-on-agents-jtbd-trading",
 ];
@@ -22,7 +23,7 @@ export default function Blog() {
         <span className="text-accent glow">Selected Writing</span>
       </h1>
       <p className="text-muted text-sm mb-8">
-        Essays on agency, technology, markets, and building.
+        Essays on agency, technology, markets, leadership, and building.
       </p>
 
       <div className="space-y-6">
