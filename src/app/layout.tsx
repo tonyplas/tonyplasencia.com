@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     template: "%s | Tony Plasencia",
   },
   description:
-    "Tony Plasencia — founder, builder, GTM at MoonPay. Built startups in crypto and AI agents.",
+    "Tony Plasencia — founder and operator exploring technology, markets, and agency. Head of GTM at MoonPay Labs.",
   metadataBase: new URL("https://tonyplasencia.com"),
   openGraph: {
     title: "Tony Plasencia",
     description:
-      "Founder, builder, GTM at MoonPay. Built startups in crypto and AI agents.",
+      "Founder and operator exploring technology, markets, and agency. Head of GTM at MoonPay Labs.",
     url: "https://tonyplasencia.com",
     siteName: "Tony Plasencia",
     locale: "en_US",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Tony Plasencia",
     description:
-      "Founder, builder, GTM at MoonPay. Built startups in crypto and AI agents.",
+      "Founder and operator exploring technology, markets, and agency. Head of GTM at MoonPay Labs.",
     creator: "@tonyplasencia3",
   },
   alternates: {
