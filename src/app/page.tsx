@@ -71,54 +71,24 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             {
-              name: "OpenHuman",
-              desc: "Your personal AI super intelligence. Private, simple, and extremely powerful.",
-              url: "https://github.com/tonyagents/openhuman",
-              live: "https://tinyhumans.ai/openhuman",
+              name: "Call Your Clanker",
+              desc: "Voice robo-advisor you can phone for prices, trending tokens, and portfolio recommendations. Powered by Claude, Twilio, and ElevenLabs.",
+              url: "https://github.com/tonyagents/call-your-clanker",
             },
             {
-              name: "Hermes Agent",
-              desc: "The agent that grows with you. Built with Nous Research.",
-              url: "https://github.com/tonyagents/hermes-agent",
-              live: "https://hermes-agent.nousresearch.com",
+              name: "Ad Video Pipeline",
+              desc: "Automated pipeline for generating ad video creatives with AI.",
+              url: "https://github.com/tonyagents/ad-video-pipeline",
             },
             {
-              name: "Zerion AI",
-              desc: "Zerion for AI agents and developers: hosted MCP docs, wallet-analysis skill, and a JSON-first CLI.",
-              url: "https://github.com/tonyagents/zerion-ai",
+              name: "Character Studio",
+              desc: "Code-only 3D character animation video pipeline. Describe a scenario, author a JSON scene script, render to MP4. Built with Remotion + Three.js.",
+              url: "https://github.com/tonyagents/character-studio",
             },
             {
-              name: "solana.new",
-              desc: "Curated skills + knowledge base for AI agents on Solana contracts & integrations.",
-              url: "https://github.com/tonyagents/solana-new",
-              live: "https://www.solana.new",
-            },
-            {
-              name: "Solana Agent Kit",
-              desc: "Connect any AI agents to Solana protocols.",
-              url: "https://github.com/tonyagents/solana-agent-kit",
-              live: "https://kit.sendai.fun",
-            },
-            {
-              name: "MoonPay Agent Templates",
-              desc: "Agent templates for on-ramps, virtual accounts, token research, and prediction markets.",
-              url: "https://github.com/tonyagents/moonpay-agent-templates",
-            },
-            {
-              name: "MoonPay Agent Marketplace",
-              desc: "Marketplace for discovering and deploying crypto-native agents powered by MoonPay.",
-              url: "https://github.com/tonyagents/moonpay-agent-marketplace",
-            },
-            {
-              name: "Solana Skills",
-              desc: "Public marketplace of Solana-related skills for agents to learn from.",
-              url: "https://github.com/tonyagents/skills-1",
-              live: "https://solanaskills.com",
-            },
-            {
-              name: "awesome-solana-ai",
-              desc: "Curated list of AI tooling to help build on Solana.",
-              url: "https://github.com/tonyagents/awesome-solana-ai",
+              name: "Cascade",
+              desc: "AI-first GTM engine. Give it one product idea, it produces the entire launch stack — plan, brief, content, and assets — all in sync.",
+              url: "https://github.com/tonyagents/cascade",
             },
           ].map((project) => (
             <a
