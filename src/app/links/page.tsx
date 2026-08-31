@@ -17,7 +17,7 @@ const socialLinks: SocialLink[] = [
   { label: "GitHub — Agents", url: "https://github.com/tonyagents", handle: "@tonyagents" },
   { label: "Griffain", url: "https://griffain.com", handle: "griffain.com" },
   { label: "MoonPay", url: "https://www.moonpay.com", handle: "moonpay.com" },
-  { label: "Email", url: "mailto:hello@tonyplasencia.com", handle: "hello@tonyplasencia.com" },
+  { label: "Email", url: "mailto:tonyplasencia@proton.me", handle: "tonyplasencia@proton.me" },
 ];
 
 export default function Links() {
