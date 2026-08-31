@@ -83,15 +83,31 @@ export default function Home() {
               live: "https://hermes-agent.nousresearch.com",
             },
             {
+              name: "Zerion AI",
+              desc: "Zerion for AI agents and developers: hosted MCP docs, wallet-analysis skill, and a JSON-first CLI.",
+              url: "https://github.com/tonyagents/zerion-ai",
+            },
+            {
               name: "solana.new",
               desc: "Curated skills + knowledge base for AI agents on Solana contracts & integrations.",
               url: "https://github.com/tonyagents/solana-new",
               live: "https://www.solana.new",
             },
             {
+              name: "Solana Agent Kit",
+              desc: "Connect any AI agents to Solana protocols.",
+              url: "https://github.com/tonyagents/solana-agent-kit",
+              live: "https://kit.sendai.fun",
+            },
+            {
               name: "MoonPay Agent Templates",
               desc: "Agent templates for on-ramps, virtual accounts, token research, and prediction markets.",
               url: "https://github.com/tonyagents/moonpay-agent-templates",
+            },
+            {
+              name: "MoonPay Agent Marketplace",
+              desc: "Marketplace for discovering and deploying crypto-native agents powered by MoonPay.",
+              url: "https://github.com/tonyagents/moonpay-agent-marketplace",
             },
             {
               name: "Solana Skills",
