@@ -6,6 +6,11 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    name: "Vela",
+    desc: "Personal AI you text — browser use, memory, and PayBox authority.",
+    url: "https://github.com/tonyplas/vela",
+  },
+  {
     name: "Call Your Clanker",
     desc: "Voice robo-advisor you can phone for prices, trending tokens, and portfolio recommendations. Powered by Claude, Twilio, and ElevenLabs.",
     url: "https://github.com/tonyagents/call-your-clanker",
