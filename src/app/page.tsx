@@ -66,7 +66,23 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="mt-16 text-accent/20 text-xs font-mono space-y-1">
+      <div className="mt-16 w-full max-w-2xl">
+        <div className="text-accent/40 text-xs font-mono mb-2">
+          <span className="text-accent/40">$ </span>now_playing
+        </div>
+        <div className="border border-surface-border bg-surface/30 p-3 rounded-sm">
+          <iframe
+            allow="autoplay *; encrypted-media *;"
+            frameBorder="0"
+            height="150"
+            style={{ width: "100%", maxWidth: "660px", overflow: "hidden", background: "transparent" }}
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/album/id1-from-the-warehouse-project-max-dean-b3b-luke-dean/1895188048?i=6763153869"
+          />
+        </div>
+      </div>
+
+      <div className="mt-8 text-accent/20 text-xs font-mono space-y-1">
         <p>&gt; system.status: online</p>
         <p>&gt; location: oakland, ca</p>
         <p>&gt; current_question: how do we build technology that expands agency responsibly?_</p>
