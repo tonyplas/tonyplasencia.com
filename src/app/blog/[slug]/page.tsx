@@ -16,7 +16,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return { title: "Not Found" };
-  return { title: post.title };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: { title: post.title, description: post.excerpt, type: "article", publishedTime: post.date, url: `/blog/${post.slug}` },
+    twitter: { card: "summary", title: post.title, description: post.excerpt },
+  };
 }
 
 function renderMarkdown(content: string) {
@@ -37,6 +43,12 @@ function renderMarkdown(content: string) {
     const headingMatch = line.match(/^(#{1,3})\s+(.+)/);
     if (headingMatch) {
       blocks.push({ type: `h${headingMatch[1].length}`, text: headingMatch[2] });
+      i++;
+      continue;
+    }
+
+    if (line.trim() === "---") {
+      blocks.push({ type: "hr", text: "" });
       i++;
       continue;
     }
@@ -100,40 +112,45 @@ export default async function BlogPost({ params }: { params: Params }) {
   const blocks = renderMarkdown(post.content);
 
   return (
-    <article className="max-w-3xl mx-auto px-6 py-16">
-      <div className="text-accent/30 text-sm mb-2">// blog/{post.slug}</div>
-      <h1 className="text-3xl font-bold mb-2">
-        <span className="text-accent glow">{post.title}</span>
-      </h1>
-      <div className="flex items-center gap-3 mb-8">
+    <article className="essay-shell max-w-4xl mx-auto px-5 sm:px-8 py-14 md:py-24">
+      <header className="essay-header border-b border-surface-border pb-10 md:pb-14 mb-10 md:mb-16">
+        <div className="text-accent/40 text-xs tracking-[0.2em] uppercase mb-6">// thinking/{post.slug}</div>
+        <h1 className="essay-title text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.06em] leading-[0.98] mb-6">
+          {post.title}
+        </h1>
+        <p className="essay-dek text-lg md:text-xl leading-relaxed text-body max-w-2xl mb-8">{post.excerpt}</p>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <span className="text-xs text-muted">{post.date}</span>
+        <span className="text-xs text-muted/60">{post.readingTime} min read</span>
         {post.tags.map((tag) => (
           <span key={tag} className="text-xs text-muted">#{tag}</span>
         ))}
-      </div>
-      <div className="space-y-4">
+        </div>
+      </header>
+      <div className="essay-body">
         {blocks.map((block, i) => {
           if (block.type === "h2") {
-            return <h2 key={i} className="text-xl font-bold text-accent mt-8 mb-2">{block.text}</h2>;
+            return <h2 key={i}>{block.text}</h2>;
           }
           if (block.type === "h3") {
-            return <h3 key={i} className="text-lg font-bold text-foreground mt-6 mb-2">{block.text}</h3>;
+            return <h3 key={i}>{block.text}</h3>;
           }
           if (block.type === "blockquote") {
             return (
-              <blockquote key={i} className="border-l-2 border-accent/30 pl-4 text-muted/70 italic my-4">
+              <blockquote key={i}>
                 <InlineText text={block.text} />
               </blockquote>
             );
           }
+          if (block.type === "hr") return <hr key={i} />;
           if (block.type === "italic") {
-            return <p key={i} className="text-body leading-relaxed italic"><InlineText text={block.text} /></p>;
+            return <p key={i} className="italic"><InlineText text={block.text} /></p>;
           }
-          return <p key={i} className="text-body leading-relaxed"><InlineText text={block.text} /></p>;
+          return <p key={i}><InlineText text={block.text} /></p>;
         })}
       </div>
-      <a href="/blog" className="text-accent/50 text-sm mt-8 inline-block hover:text-accent transition-colors">
-        &lt;- back to blog
+      <a href="/blog" className="text-accent/50 text-sm mt-16 inline-block hover:text-accent transition-colors">
+        &larr; all thinking
       </a>
     </article>
   );

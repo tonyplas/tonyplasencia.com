@@ -10,6 +10,7 @@ export interface Post {
   excerpt: string;
   tags: string[];
   content: string;
+  readingTime: number;
 }
 
 function parseFrontmatter(raw: string): { data: Record<string, string | string[]>; content: string } {
@@ -54,6 +55,7 @@ export function getAllPosts(): Post[] {
       excerpt: (data.excerpt as string) || "",
       tags: (data.tags as string[]) || [],
       content,
+      readingTime: Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 225)),
     };
   });
 
@@ -74,5 +76,6 @@ export function getPost(slug: string): Post | null {
     excerpt: (data.excerpt as string) || "",
     tags: (data.tags as string[]) || [],
     content,
+    readingTime: Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 225)),
   };
 }
