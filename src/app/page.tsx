@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const highlights = [
   "Exited founder",
@@ -67,46 +66,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="mt-16 w-full max-w-2xl">
-        <div className="flex items-end justify-between border-b border-surface-border pb-3 mb-1">
-          <div>
-            <div className="text-accent/40 text-xs font-mono mb-1">$ latest_thinking</div>
-            <h2 className="text-xl font-bold tracking-tight">Ideas in public</h2>
-          </div>
-          <Link href="/blog" className="text-xs text-muted hover:text-accent transition-colors">all essays &rarr;</Link>
-        </div>
-        {[
-          { slug: "globalization-without-geography", title: "Globalization Without Geography", label: "Economic thesis" },
-          { slug: "the-agency-layer", title: "The Agency Layer", label: "Software thesis" },
-        ].map((post, index) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex gap-4 py-5 border-b border-surface-border hover:border-accent/30 transition-colors">
-            <span className="text-xs text-accent/40 pt-1">0{index + 1}</span>
-            <span className="flex-1">
-              <span className="block text-xs uppercase tracking-[0.16em] text-muted mb-1">{post.label}</span>
-              <span className="block text-lg font-bold text-foreground group-hover:text-accent transition-colors">{post.title}</span>
-            </span>
-            <span className="text-accent/30 group-hover:text-accent transition-colors">&rarr;</span>
-          </Link>
-        ))}
-      </div>
-
-      <div className="mt-16 w-full max-w-2xl">
-        <div className="text-accent/40 text-xs font-mono mb-2">
-          <span className="text-accent/40">$ </span>now_playing
-        </div>
-        <div className="border border-surface-border bg-surface/30 p-3 rounded-sm">
-          <iframe
-            allow="autoplay *; encrypted-media *;"
-            frameBorder="0"
-            height="150"
-            style={{ width: "100%", maxWidth: "660px", overflow: "hidden", background: "transparent" }}
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/album/id1-from-the-warehouse-project-max-dean-b3b-luke-dean/1895188048?i=6763153869"
-          />
-        </div>
-      </div>
-
-      <div className="mt-8 text-accent/20 text-xs font-mono space-y-1">
+      <div className="mt-16 text-accent/20 text-xs font-mono space-y-1">
         <p>&gt; system.status: online</p>
         <p>&gt; location: oakland, ca</p>
         <p>&gt; current_question: how do we build technology that expands agency responsibly?_</p>

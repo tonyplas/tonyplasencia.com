@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import BinaryRain from "@/components/BinaryRain";
 import CityScene from "@/components/CityScene";
+import MusicDock from "@/components/MusicDock";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -58,6 +59,7 @@ export default function RootLayout({
         <footer className="relative z-10 border-t border-surface-border py-6 text-center text-xs text-muted">
           <span className="text-accent/40">&gt;</span> tony.plasencia &copy; {new Date().getFullYear()}
         </footer>
+        <MusicDock />
       </body>
     </html>
   );
