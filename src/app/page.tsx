@@ -12,12 +12,12 @@ export default function Home() {
       <div className="text-accent/30 text-sm font-mono">// init v2.0</div>
 
       <Image
-        src="/headshot.jpg"
+        src="/tony-plasencia-2026-11.jpg"
         alt="Tony Plasencia"
         width={120}
         height={120}
         className="rounded-full border-2 border-accent/30"
-        priority
+        preload
       />
 
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
@@ -45,9 +45,7 @@ export default function Home() {
 
       <div className="flex flex-wrap gap-4 mt-4">
         <a
-          href="https://t.me/tonyplasencia"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:operator@tonyplasencia.com"
           className="bg-accent/10 border border-accent text-accent px-6 py-2.5 text-sm font-bold hover:bg-accent/20 transition-colors"
         >
           Work with me &rarr;
