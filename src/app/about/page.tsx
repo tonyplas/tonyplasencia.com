@@ -30,7 +30,7 @@ export default function About() {
 
       <div className="flex items-center gap-6 mb-8">
         <Image
-          src="/headshot.jpg"
+          src="/tony-plasencia-2026-11.jpg"
           alt="Tony Plasencia"
           width={100}
           height={100}
@@ -101,7 +101,14 @@ export default function About() {
         </p>
 
         <p>
-          Feel free to find me{" "}
+          Email me at{" "}
+          <a
+            href="mailto:tony@tonyplasencia.com"
+            className="text-accent hover:underline break-words"
+          >
+            tony@tonyplasencia.com
+          </a>{" "}
+          or find me{" "}
           <a
             href="https://t.me/tonyplasencia"
             target="_blank"
@@ -158,9 +165,7 @@ export default function About() {
         <div className="mt-12 pt-8 border-t border-surface-border text-center">
           <p className="text-muted text-sm mb-4">Interested in working together?</p>
           <a
-            href="https://t.me/tonyplasencia"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:operator@tonyplasencia.com"
             className="inline-block bg-accent/10 border border-accent text-accent px-6 py-2.5 text-sm font-bold hover:bg-accent/20 transition-colors"
           >
             Work with me &rarr;

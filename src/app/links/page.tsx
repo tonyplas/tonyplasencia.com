@@ -10,6 +10,12 @@ interface SocialLink {
   handle: string;
 }
 
+const contactLinks: SocialLink[] = [
+  { label: "General inquiries", url: "mailto:tony@tonyplasencia.com", handle: "tony@tonyplasencia.com" },
+  { label: "Investing", url: "mailto:vc@tonyplasencia.com", handle: "vc@tonyplasencia.com" },
+  { label: "GTM & partnerships", url: "mailto:operator@tonyplasencia.com", handle: "operator@tonyplasencia.com" },
+];
+
 const socialLinks: SocialLink[] = [
   { label: "X / Twitter", url: "https://x.com/tonyplasencia3", handle: "@tonyplasencia3" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/efren-plasencia/", handle: "/in/efren-plasencia" },
@@ -17,7 +23,6 @@ const socialLinks: SocialLink[] = [
   { label: "GitHub — Agents", url: "https://github.com/tonyagents", handle: "@tonyagents" },
   { label: "Griffain", url: "https://griffain.com", handle: "griffain.com" },
   { label: "MoonPay", url: "https://www.moonpay.com", handle: "moonpay.com" },
-  { label: "Email", url: "mailto:tonyplasencia@proton.me", handle: "tonyplasencia@proton.me" },
 ];
 
 export default function Links() {
@@ -28,6 +33,24 @@ export default function Links() {
         <span className="text-accent glow">Links</span>
       </h1>
 
+      <div className="space-y-3 mb-8">
+        <h2 className="text-sm text-accent mb-4">Get in touch</h2>
+        {contactLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.url}
+            className="flex flex-col gap-1 border border-surface-border p-4 bg-surface/30 hover:border-accent/30 transition-colors group"
+          >
+            <span className="text-foreground group-hover:text-accent transition-colors font-bold">
+              {link.label}
+            </span>
+            <span className="text-sm text-muted group-hover:text-accent/60 transition-colors break-words">
+              {link.handle}
+            </span>
+          </a>
+        ))}
+      </div>
+
       <div className="space-y-3">
         {socialLinks.map((link) => (
           <a
@@ -35,7 +58,7 @@ export default function Links() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between border border-surface-border p-4 bg-surface/30 hover:border-accent/30 transition-colors group"
+            className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between border border-surface-border p-4 bg-surface/30 hover:border-accent/30 transition-colors group"
           >
             <span className="text-foreground group-hover:text-accent transition-colors font-bold">
               {link.label}
